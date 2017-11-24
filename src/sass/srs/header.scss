@@ -1,0 +1,201 @@
+body {
+  font-family: $theme-font;
+  letter-spacing: 1px;
+  line-height: 25px;
+  // background: #fafafa;
+}
+
+.shopping {
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  background: #fafafa;
+
+  .nav-dropdown {
+    display: none;
+    position: absolute;
+    left: -150%;
+    margin-top: 10px;
+    background: #fafafa;
+    width:120px;
+  }
+  p {
+    padding: 5px 20px;
+    cursor: pointer;
+  }
+  .fa {
+    padding: 12px;
+    font-size: 18px;
+    position: relative;
+    &:hover .nav-dropdown {
+      display: block;
+    }
+  }
+}
+
+.head {
+  // padding: 30px 0;
+  h1 {
+    text-indent: -9999px;
+    background: url("http://logo-load.com/uploads/posts/2016-03/1457626457_hublot-logo.jpg")
+      no-repeat center center;
+    height: 150px;
+    background-size: contain;
+  }
+}
+
+.navigation {
+  padding: 15px 0;
+  margin-bottom: 20px;
+  border-top: 1px solid #777;
+  border-bottom: 1px solid #777;
+  font-family: $theme-font-secondary;
+  font-weight: bold;
+  width: 95%;
+  a {
+    color: #333;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.banner-home-top{
+	margin: 25px auto;
+	position:relative;
+	img{
+		width:100%;
+		margin: 10px auto;
+	}
+	h4{
+		position:absolute;
+		top:50%;
+		left:0;
+		width:100%;
+		text-align: center;
+		transform: translatey(-50%);
+	}
+}
+.divider{
+	margin: 40px auto;
+}
+.product-banner {
+  padding: 0;
+  img{
+  	width:100%;
+  }
+  // background: url("") no-repeat center center;
+ 
+}
+
+.box-title{
+	border-top:2px solid #e0e0e0;
+	legend{
+		width:auto;
+		padding: 0 20px;
+	}
+}
+%btn{
+	background:transparent;
+	border:1px solid black;
+	text-transform: uppercase;
+}
+.product-grid{
+	font-size:80%;
+	.product{
+		margin-bottom:30px;
+	}
+	img{
+		width:80%;
+	}
+	.product-descr{
+		margin-top:20px;
+		p{
+			margin:0;
+		}
+	}
+	form{
+		margin:50px 0;
+		text-align:center;
+		width:100%;
+		.btn{
+			@extend %btn;
+			width:30%;
+		}
+	}
+}
+
+.product-highlight{
+	position:relative;
+	padding:0;
+	img{
+		max-width:100%;
+	}
+	.highlight-descr{
+		position:absolute;
+		text-align:center;
+		font-size:90%;
+		width:40%;
+		right:60px;
+		top:50%;
+		transform:translatey(-50%);
+		h2{
+			text-transform: uppercase;
+			margin-bottom:20px;
+			letter-spacing: 6px;
+		}
+		.btn{
+			@extend %btn;
+			width:40%;
+			border-radius:0px;
+			background:#111;
+			color:#fff;
+
+		}
+	}
+}
+.featured{
+	.featured-item{
+		text-align:center;
+		font-size:80%;
+		margin-bottom:30px;
+		img{
+			width:100%;
+		}
+		h4{
+			margin:30px 0 20px 0;
+		}
+		.btn{
+			@extend %btn;
+			width:40%;
+			border-radius:0px;
+			background:#111;
+			color:#fff;
+		}
+	}
+}
+.product-gallery {
+  // margin:100px auto;
+  .product-detail-overlay {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparentize(white, 0.3);
+    font-family: $theme-font-secondary;
+    font-weight: bold;
+    transition: all 0.25s;
+    div {
+      position: relative;
+      top: 50%;
+      transform: translatey(-50%);
+    }
+  }
+  .product {
+    padding: 0;
+    position: relative;
+    &:hover .product-detail-overlay {
+      opacity: 1;
+    }
+  }
+}
