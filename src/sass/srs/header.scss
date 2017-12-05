@@ -5,6 +5,19 @@ body {
   // background: #fafafa;
 }
 
+//button styles
+
+%btn{
+	background:#111;
+	color:#fff;
+	text-transform: uppercase;
+	border-radius:0;
+	&:hover{
+		background: transparent;
+		color:#111;
+		border:1px solid #111;
+	}
+}
 .shopping {
   z-index: 1;
   position: sticky;
@@ -44,22 +57,49 @@ body {
   }
 }
 
-.navigation {
-  padding: 15px 0;
-  margin-bottom: 20px;
-  border-top: 1px solid #777;
-  border-bottom: 1px solid #777;
-  font-family: $theme-font-secondary;
-  font-weight: bold;
-  width: 95%;
-  a {
-    color: #333;
-    &:hover {
-      text-decoration: none;
-    }
+.nav {
+  background: #222;
+  color:white;
+  position: fixed;
+  top:0;
+  width:100%;
+  z-index: 100;
+  h2{
+  	line-height: 42px;
+  }
+  .nav-items{
+  	padding:0;
+  	li{
+  		position:relative;
+  			.dropdown-arrow{
+  		height:0;
+  		width:0;
+  		border: 5px solid transparent;
+  		border-top-color: #fff;
+  		position:absolute;
+  		right:0;
+  		top: 21px;
+  	}	
+  	}
+  	
+  	}
+  	.nav-icon{
+  	border-left: 1px dotted gray;
+  }
+  
+  
+  h2{
+  	display:inline-block;
+  }
+  ul, h2{
+  	margin:0;
+  }
+  li{
+  	list-style-type:none;
+  	display: inline-block;
+  	padding: 10px 20px;
   }
 }
-
 .banner-home-top{
 	margin: 25px auto;
 	position:relative;
@@ -80,12 +120,70 @@ body {
 	margin: 40px auto;
 }
 .product-banner {
+	position:relative;
   padding: 0;
+  margin-top: 45px;
   img{
   	width:100%;
   }
-  // background: url("") no-repeat center center;
- 
+  .carousel-content{
+  	position:absolute;
+  	top:50%;
+  	transform: translateY(-50%);
+  	text-align: center;
+  	left:0;
+  	right:0;
+  	max-width:80%;
+  	margin:0 auto;
+  
+
+  	.line{
+  		background:#111;
+  		height:2px;
+  		width:50px;
+  		margin: 15px auto 10px;
+  	}
+  	h3{
+  		font-weight: bold;
+
+  	}
+  	p{
+  		font-size: 80%;
+  	}
+  	.btn{
+  		@extend %btn;
+  		min-width: 250px;
+  	}
+  }
+  
+  %btn-carousel{
+  	font-size: 50px;
+  	position:absolute;
+  	top:50%;
+  	transform:translatey(-50%);
+  	background: transparent;
+  	border-style:none;
+  	box-shadow:none;
+  	display:none;
+  	&:hover{
+  		color:#222;
+  		cursor:pointer;
+  	}
+  }
+  .mySlides{
+  	position:relative;
+  }
+    .btn-carousel-left{
+  	@extend %btn-carousel;
+  	left:10px;
+  }
+  .btn-carousel-right{
+  	@extend %btn-carousel;
+  	right:10px;
+  }
+ &:hover %btn-carousel{
+ 	display: block;
+ }
 }
 
 .box-title{
@@ -95,20 +193,33 @@ body {
 		padding: 0 20px;
 	}
 }
-%btn{
-	background:transparent;
-	border:1px solid black;
-	text-transform: uppercase;
-}
+
 .product-grid{
 	font-size:80%;
 	.product{
 		margin-bottom:30px;
+		.sale-label{
+			font-size:90%;
+			float:right;
+			position: absolute;
+			right:5%;
+			top:5%;
+			p{
+				display:inline-block;
+				color: red;
+				border: 2px solid #e95144;
+				padding:0 5px;	
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+			
+		}
 	}
 	img{
 		width:80%;
 	}
 	.product-descr{
+		
 		margin-top:20px;
 		p{
 			margin:0;
@@ -120,7 +231,7 @@ body {
 		width:100%;
 		.btn{
 			@extend %btn;
-			width:30%;
+			min-width:30%;
 		}
 	}
 }
@@ -146,15 +257,12 @@ body {
 		}
 		.btn{
 			@extend %btn;
-			width:40%;
-			border-radius:0px;
-			background:#111;
-			color:#fff;
-
+			min-width:40%;
 		}
 	}
 }
 .featured{
+	border-bottom: 1px solid #e0e0e0;
 	.featured-item{
 		text-align:center;
 		font-size:80%;
@@ -168,34 +276,103 @@ body {
 		.btn{
 			@extend %btn;
 			width:40%;
-			border-radius:0px;
-			background:#111;
-			color:#fff;
 		}
 	}
 }
-.product-gallery {
-  // margin:100px auto;
-  .product-detail-overlay {
-    opacity: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: transparentize(white, 0.3);
-    font-family: $theme-font-secondary;
-    font-weight: bold;
-    transition: all 0.25s;
-    div {
-      position: relative;
-      top: 50%;
-      transform: translatey(-50%);
-    }
-  }
-  .product {
-    padding: 0;
-    position: relative;
-    &:hover .product-detail-overlay {
-      opacity: 1;
-    }
-  }
+
+.instagram{
+	background:#fff8ee;
+	h2{
+		margin: 50px 0 25px;
+	}
+	img{
+		width:100%;
+	}
+	.instagram-feed{
+		margin-top:25px;
+	}
+	form{
+		margin:50px 0;
+		text-align:center;
+		width:100%;
+		.btn{
+			@extend %btn;
+			min-width:20%;
+		}
+}
+}
+.banner-home-top, .product-grid, .featured, .brands, .instagram{
+	img{
+		transition: 0.25s opacity;
+		&:hover{
+			opacity:0.7;
+		}
+	}
+}
+
+
+.footer{
+	background: #222;
+	color:transparentize(#fff,0.4);
+	font-size:14px;
+	.footer-quicklink{
+		padding:25px 0;
+	}
+	h4{
+		color:#fff;
+		margin-bottom:20px;
+		font-size:18px;
+	}
+	ul{
+		padding:0;
+	}
+	li{
+		list-style-type:none;
+		display:block;
+		line-height: 30px;
+	}
+
+	@include placeholder(transparentize(white,0.4));
+	.social-media{
+
+		ul{
+			overflow:hidden;
+			margin-bottom: 2rem;
+		}
+		li{
+			float:left;
+			color:#444;
+			margin-right:10px;
+			width:35px;
+			height:35px;
+			line-height: 35px;
+			text-align: center;
+			background:#fff;
+			border-radius:50%;
+		}
+	}
+	.newsletter{
+		input{
+			background:transparent;
+			color:transparentize(#fff,0.4);
+			border:1px solid transparentize(#fff,0.4);
+			min-width:300px;
+		}
+		button{
+			background:#444;
+			color:#fff;
+			border:1px solid #444;
+		}
+		input, button{
+			margin-bottom:10px;
+			padding:5px 10px;
+		}
+	}
+	.copyright{
+		padding:20px 0;
+		border-top: 1px solid transparentize(#fff,0.4);
+		p{
+			margin:0;
+		}
+	}
 }
