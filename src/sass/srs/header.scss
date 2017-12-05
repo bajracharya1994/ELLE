@@ -16,6 +16,7 @@ body {
 		background: transparent;
 		color:#111;
 		border:1px solid #111;
+		cursor:pointer;
 	}
 }
 .shopping {
@@ -64,14 +65,21 @@ body {
   top:0;
   width:100%;
   z-index: 100;
+
+  a{
+  			color:#fff;
+  		}
   h2{
   	line-height: 42px;
   }
   .nav-items{
   	padding:0;
+  	display:none;
   	li{
   		position:relative;
+  		
   			.dropdown-arrow{
+  		
   		height:0;
   		width:0;
   		border: 5px solid transparent;
@@ -79,9 +87,8 @@ body {
   		position:absolute;
   		right:0;
   		top: 21px;
+  		}
   	}	
-  	}
-  	
   	}
   	.nav-icon{
   	border-left: 1px dotted gray;
@@ -135,6 +142,7 @@ body {
   	right:0;
   	max-width:80%;
   	margin:0 auto;
+  	display:none;
   
 
   	.line{
@@ -243,13 +251,9 @@ body {
 		max-width:100%;
 	}
 	.highlight-descr{
-		position:absolute;
 		text-align:center;
 		font-size:90%;
-		width:40%;
-		right:60px;
-		top:50%;
-		transform:translatey(-50%);
+		margin-top: 20px;
 		h2{
 			text-transform: uppercase;
 			margin-bottom:20px;
@@ -289,7 +293,11 @@ body {
 		width:100%;
 	}
 	.instagram-feed{
-		margin-top:25px;
+		margin:25px 0 0;
+		padding:7.5px;
+		div{
+			padding:7.5px;
+		}
 	}
 	form{
 		margin:50px 0;

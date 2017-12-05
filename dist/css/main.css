@@ -11,7 +11,8 @@ body {
   .product-banner .carousel-content .btn:hover, .product-grid form .btn:hover, .product-highlight .highlight-descr .btn:hover, .featured .featured-item .btn:hover, .instagram form .btn:hover {
     background: transparent;
     color: #111;
-    border: 1px solid #111; }
+    border: 1px solid #111;
+    cursor: pointer; }
 
 .shopping {
   z-index: 1;
@@ -48,10 +49,13 @@ body {
   top: 0;
   width: 100%;
   z-index: 100; }
+  .nav a {
+    color: #fff; }
   .nav h2 {
     line-height: 42px; }
   .nav .nav-items {
-    padding: 0; }
+    padding: 0;
+    display: none; }
     .nav .nav-items li {
       position: relative; }
       .nav .nav-items li .dropdown-arrow {
@@ -104,7 +108,8 @@ body {
     left: 0;
     right: 0;
     max-width: 80%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    display: none; }
     .product-banner .carousel-content .line {
       background: #111;
       height: 2px;
@@ -179,13 +184,9 @@ body {
   .product-highlight img {
     max-width: 100%; }
   .product-highlight .highlight-descr {
-    position: absolute;
     text-align: center;
     font-size: 90%;
-    width: 40%;
-    right: 60px;
-    top: 50%;
-    transform: translatey(-50%); }
+    margin-top: 20px; }
     .product-highlight .highlight-descr h2 {
       text-transform: uppercase;
       margin-bottom: 20px;
@@ -213,7 +214,10 @@ body {
   .instagram img {
     width: 100%; }
   .instagram .instagram-feed {
-    margin-top: 25px; }
+    margin: 25px 0 0;
+    padding: 7.5px; }
+    .instagram .instagram-feed div {
+      padding: 7.5px; }
   .instagram form {
     margin: 50px 0;
     text-align: center;
@@ -278,3 +282,47 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.6); }
     .footer .copyright p {
       margin: 0; }
+
+.slideanim {
+  visibility: hidden; }
+
+.slide {
+  /* The name of the animation */
+  animation-name: slide;
+  -webkit-animation-name: slide;
+  /* The duration of the animation */
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  /* Make the element visible */
+  visibility: visible; }
+
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(10%); }
+  100% {
+    opacity: 1;
+    transform: translateY(0%); } }
+
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10%); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%); } }
+
+@media only screen and (min-width: 768px) {
+  .product-highlight .highlight-descr {
+    position: absolute;
+    text-align: center;
+    font-size: 90%;
+    width: 40%;
+    right: 60px;
+    top: 50%;
+    transform: translatey(-50%); }
+  .nav .nav-items {
+    display: block; }
+  .nav .product-banner .carousel-content {
+    display: block; } }

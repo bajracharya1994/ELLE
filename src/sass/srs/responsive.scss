@@ -1,0 +1,23 @@
+@media only screen and (min-width:768px){
+	.product-highlight{
+		.highlight-descr{
+			position:absolute;
+			text-align:center;
+			font-size:90%;
+			width:40%;
+			right:60px;
+			top:50%;
+			transform:translatey(-50%);
+		}
+	}
+	.nav{
+		.nav-items{
+		display:block;
+	}
+	.product-banner{
+		.carousel-content{
+			display: block;
+		}
+	}
+}
+}
