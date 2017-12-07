@@ -2,6 +2,13 @@ body {
   font-family: "playfair display";
   letter-spacing: 1px;
   line-height: 25px; }
+  body::-webkit-scrollbar {
+    width: 8px; }
+    body::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
+    body::-webkit-scrollbar-thumb {
+      background-color: #444;
+      height: 200px; }
 
 .product-banner .carousel-content .btn, .product-grid form .btn, .product-highlight .highlight-descr .btn, .featured .featured-item .btn, .instagram form .btn {
   background: #111;
@@ -207,6 +214,9 @@ body {
     .featured .featured-item .btn {
       width: 40%; }
 
+.brands .row div:first-child {
+  margin-bottom: 50px; }
+
 .instagram {
   background: #fff8ee; }
   .instagram h2 {
@@ -324,5 +334,7 @@ body {
     transform: translatey(-50%); }
   .nav .nav-items {
     display: block; }
-  .nav .product-banner .carousel-content {
-    display: block; } }
+  .product-banner .carousel-content {
+    display: block; }
+  .brands .row div:first-child {
+    margin-bottom: 0; } }

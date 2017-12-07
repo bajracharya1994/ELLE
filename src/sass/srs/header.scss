@@ -3,6 +3,16 @@ body {
   letter-spacing: 1px;
   line-height: 25px;
   // background: #fafafa;
+  &::-webkit-scrollbar{
+  	width:8px;
+  	&-track{
+  		-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);
+  	}
+  	&-thumb{
+  		background-color: #444;
+  		height:200px;
+  	}
+  }
 }
 
 //button styles
@@ -282,6 +292,14 @@ body {
 			width:40%;
 		}
 	}
+}
+
+.brands{
+	.row{
+		div:first-child{
+		margin-bottom:50px;
+	}
+}
 }
 
 .instagram{
